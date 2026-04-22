@@ -1,29 +1,47 @@
 # Wiki Log
 
-> 全部 wiki 操作的时序记录。只追加，不修改。
-> Format: `## [YYYY-MM-DD] action | subject`
-> Actions: ingest, update, query, lint, create, archive, delete
-> 此文件超过 500 条时轮转：改名为 `log-YYYY.md`，重新开始。
+> 操作日志。每次编译内容后追加记录。
 
-## [2026-04-22] create | Wiki initialized
-- Domain: 通用知识库——工作笔记、技术文档、学习心得、行业研究
-- Structure created with SCHEMA.md, index.md, log.md
-- Directories: raw/{articles,papers,transcripts,assets}, entities/, concepts/, comparisons/, queries/, _archive/
+---
 
-## [2026-04-22] ingest | 学习笔记-2026.pdf
-- Source: raw/articles/学习笔记-2026.txt [redacted — contained API tokens]
-- ⚠️ raw 文件不得包含敏感信息，push 前先检查
-- Created entities/openclaw.md
-- Created concepts/openclaw-soul-triplet.md
-- Created concepts/openclaw-skills.md
-- Created concepts/供应链管理.md
-- Created concepts/ERP生产模块.md
-- Created concepts/沟通技巧.md
-- Created concepts/项目管理.md
-- Topics: OpenClaw配置/供应链管理/ERP生产模块/沟通技巧/项目管理
+## 2026-04-22 — Notion 知识库整理
 
-## 2026-04-22
+**操作**：从 Notion 知识库批量读取 9 个页面，整理编译进 wiki。
 
-- 新增 [[ai-agent]] — 菜鸟教程 AI Agent 教程编译
-- 新增 [[agent-core-formula]] — Agent 核心公式
-- 新增 [[agent-vs-traditional-program]] — Agent vs 传统程序对比
+**新增文件**：
+- `entities/proactive-agent.md` — Proactive Agent 主动式 Agent 架构
+- `entities/software-roles-config.md` — 软件公司 7 角色配置
+- `concepts/wal-protocol.md` — WAL 协议（Write-Ahead Logging）
+- `concepts/obsidian-knowledge.md` — Obsidian 知识汇总
+
+**扩充文件**：
+- `entities/ai-agent.md` — 增加发展历程、五大核心特性、Agent Loop
+- `concepts/agent-core-formula.md` — 增加五大架构层次、ReAct 工作流程
+- `concepts/agent-vs-traditional-program.md` — 增加五大特性对比表、Agent 类型、常见挑战
+
+**数据来源**：
+- Notion: Proactive Agent 技能详解
+- Notion: 软件公司角色配置
+- Notion: Obsidian 知识汇总
+- Notion: AI Agent 教程（简介/核心组件/工作原理）
+
+**GitHub**：git push 成功
+
+---
+
+## 2026-04-22 — AI Agent 教程编译
+
+**操作**：菜鸟教程 AI Agent 教程，编译为 wiki 格式。
+
+**新增文件**：
+- `entities/ai-agent.md`
+- `concepts/agent-core-formula.md`
+- `concepts/agent-vs-traditional-program.md`
+
+**GitHub**：git push 成功
+
+---
+
+## 2026-04-?? — OpenClaw 框架笔记
+
+详见各文件内 sources 字段。
