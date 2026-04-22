@@ -11,7 +11,8 @@
 - Directories: raw/{articles,papers,transcripts,assets}, entities/, concepts/, comparisons/, queries/, _archive/
 
 ## [2026-04-22] ingest | 学习笔记-2026.pdf
-- Source: raw/articles/学习笔记-2026.txt
+- Source: raw/articles/学习笔记-2026.txt [redacted — contained API tokens]
+- ⚠️ raw 文件不得包含敏感信息，push 前先检查
 - Created entities/openclaw.md
 - Created concepts/openclaw-soul-triplet.md
 - Created concepts/openclaw-skills.md
@@ -20,3 +21,9 @@
 - Created concepts/沟通技巧.md
 - Created concepts/项目管理.md
 - Topics: OpenClaw配置/供应链管理/ERP生产模块/沟通技巧/项目管理
+
+## 2026-04-22
+
+- 新增 [[ai-agent]] — 菜鸟教程 AI Agent 教程编译
+- 新增 [[agent-core-formula]] — Agent 核心公式
+- 新增 [[agent-vs-traditional-program]] — Agent vs 传统程序对比

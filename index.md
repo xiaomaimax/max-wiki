@@ -10,6 +10,10 @@
 
 ## Concepts
 
+- [[ai-agent]] — AI Agent 实体页（菜鸟教程）
+- [[agent-core-formula]] — Agent = LLM + Planning + Tool use + Memory
+- [[agent-vs-traditional-program]] — Agent vs 传统程序对比
+
 - [[openclaw-soul-triplet]] — SOUL/USER/AGENTS 三件套，定义助手行为和记忆管理
 - [[openclaw-skills]] — Notion/Tavily/Qqmail 等已配置 skill 及工作流
 - [[供应链管理]] — 战略/MTS vs MTO/供应商分类与管理/DELL模式
