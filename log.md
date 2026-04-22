@@ -29,6 +29,23 @@
 
 ---
 
+## 2026-04-22 — MaxMES系统文档整理
+
+**操作**：从 Notion 知识库读取 MaxMES系统文档（6个子模块），整理编译进 wiki。
+
+**新增文件**：
+- `entities/maxmes.md` — MaxMES 系统概览
+- `concepts/maxmes-production.md` — 生产管理模块
+- `concepts/maxmes-equipment.md` — 设备管理模块
+- `concepts/maxmes-quality.md` — 质量管理模块
+- `concepts/maxmes-inventory.md` — 库存管理模块
+- `concepts/maxmes-operations.md` — 日常操作指南
+- `concepts/maxmes-admin.md` — 系统管理员指南
+
+**GitHub**：git push 成功
+
+---
+
 ## 2026-04-22 — AI Agent 教程编译
 
 **操作**：菜鸟教程 AI Agent 教程，编译为 wiki 格式。
