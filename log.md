@@ -62,3 +62,24 @@
 ## 2026-04-?? — OpenClaw 框架笔记
 
 详见各文件内 sources 字段。
+
+---
+
+## 2026-04-23 — VOC知识库编译
+
+**操作**：将 VOC知识库202604.pdf 编译进 wiki。
+
+**新增文件**：
+- `entities/voc-system.md` — VOC 客户体验管理系统概览（标准模块/自定义模块/供应商）
+- `concepts/voc-fee-structure.md` — VOC 费用结构（2024/2025年度费用、分摊比例）
+- `concepts/voc-base-assessment.md` — VOC 基地考核方式（三种口径对比）
+- `concepts/voc-ai-analysis.md` — VOC-AI 分析系统（达观数据，五层架构）
+- `concepts/voc-public-opinion.md` — 舆情监控系统（每日1000条采集+AI情感分析）
+- `concepts/voc-magic-mirror.md` — 魔镜系统（数说故事：VOC/有数/CMI）
+- `concepts/voc-project-implementation.md` — 达观数据项目实施流程及推进记录
+- `concepts/voc-postgresql.md` — PostgreSQL 安装配置（VOC服务器）
+
+**数据来源**：
+- `raw/voc-knowledge-202604.pdf` — VOC知识库202604.pdf
+
+**GitHub**：待 push
