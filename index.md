@@ -54,6 +54,20 @@
 - [[voc-project-implementation]] — 达观数据项目实施，推进记录
 - [[voc-postgresql]] — PostgreSQL 安装配置（VOC服务器）
 
+## Entities
+
+### DSM Energy 数字化车间管理
+- [[dsm/index]] — DSM Energy 总览，水电气智能表+SAP产量+能源分析
+- [[dsm/contacts]] — SEB联系人，Azure/AWS/Kepware/Qlik账号
+- [[dsm/meetings]] — 月度会议记录，2024-2026问题追踪
+- [[dsm/azure]] — Azure云架构，Thingworx/WAF/订阅配置
+- [[dsm/aws]] — AWS云架构，S3/ IAM Role/API Gateway
+- [[dsm/kepware]] — OPC Server(Kepware)，各基地服务器配置
+- [[dsm/qlik]] — Qlik看板，账号/刷新机制/报警配置
+- [[dsm/sap]] — SAP数据接口，工单/报工/FTP同步
+- [[dsm/sites]] — 各基地部署，武汉/绍兴/杭州/玉环
+- [[dsm/troubleshooting]] — 故障记录，历史问题追踪
+
 ## Comparisons
 <!-- 按字母顺序排列 -->
 

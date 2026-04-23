@@ -82,4 +82,27 @@
 **数据来源**：
 - `raw/voc-knowledge-202604.pdf` — VOC知识库202604.pdf
 
-**GitHub**：待 push
+**GitHub**：git push 成功
+
+---
+
+## 2026-04-23 — DSM知识库编译
+
+**操作**：将 DSM知识库202604.pdf 编译进 wiki。
+
+**新增文件**：
+- `entities/dsm/index.md` — DSM Energy 总览（水电气智能表+SAP产量+能源分析）
+- `concepts/dsm/contacts.md` — SEB联系人，Azure/AWS/Kepware/Qlik账号
+- `concepts/dsm/meetings.md` — 月度会议记录（2024-2026问题追踪）
+- `concepts/dsm/azure.md` — Azure云架构（Thingworx/WAF/订阅配置）
+- `concepts/dsm/aws.md` — AWS云架构（S3/IAM Role/API Gateway）
+- `concepts/dsm/kepware.md` — OPC Server(Kepware)，各基地服务器配置
+- `concepts/dsm/qlik.md` — Qlik看板（账号/刷新机制/报警配置）
+- `concepts/dsm/sap.md` — SAP数据接口（工单/报工/FTP同步）
+- `concepts/dsm/sites.md` — 各基地部署（武汉/绍兴/杭州/玉环）
+- `concepts/dsm/troubleshooting.md` — 故障记录（历史问题追踪）
+
+**数据来源**：
+- `raw/dsm-knowledge-202604.pdf` — DSM知识库202604.pdf
+
+**GitHub**：git push 成功
