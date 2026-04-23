@@ -2,7 +2,7 @@
 
 > 内容目录。每篇 wiki 页面按类型列出并附有一句话摘要。
 > 查询时先读此文件找到相关页面。
-> Last updated: 2026-04-23 | Total pages: 30
+> Last updated: 2026-04-23 | Total pages: 41
 
 ## Entities
 
@@ -27,6 +27,18 @@
 - [[obsidian-knowledge]] — Obsidian 知识汇总，本地 PKM vs Notion 对比
 
 ### MaxMES 系统
+- [[mes/index]] — MaxMES 系统知识库总览（项目文档/运维文档/核心模块索引）
+- [[mes/project-overview]] — 项目概述：背景/目标/范围/团队/风险/预算/验收标准
+- [[mes/requirements]] — 需求规格说明书：11个功能模块+非功能需求（性能/可用性/安全）
+- [[mes/architecture]] — 系统架构设计：技术栈/部署架构/集成接口/数采最佳实践
+- [[mes/database]] — 数据库设计：MySQL 8.0/Redis/RabbitMQ/索引/加密/备份策略
+- [[mes/blueprint]] — 蓝图设计报告：设计目标/集成架构/实施计划（2026年）
+- [[mes/training]] — 培训计划：88人培训目标/对象分类
+- [[mes/testing]] — UAT测试文档：功能/业务流程/易用性/性能/兼容性/安全测试
+- [[mes/deployment]] — 部署手册+上线计划：分阶段上线策略/端口列表/P0-P3故障分级
+- [[mes/operations]] — 运维手册：运维团队职责/监控体系/故障管理/备份恢复
+- [[mes/troubleshooting]] — 巡检报告：52项问题详情（P1×8/P2×20/P3×8）+ 已修复汇总
+- [[mes/project-acceptance]] — 项目验收报告：验收依据/范围/标准
 - [[maxmes-production]] — 生产管理模块：车间计划、工单、报工、生产日报
 - [[maxmes-equipment]] — 设备管理模块：设备档案、点检、维护、维修
 - [[maxmes-quality]] — 质量管理模块：IQC/PQC/FQC、质量分析、批次追溯
