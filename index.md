@@ -11,6 +11,7 @@
 - [[proactive-agent]] — Proactive Agent，主动预判、自我改进的 Agent 架构
 - [[software-roles-config]] — 软件公司 7 角色配置（PM/架构师/前端/后端/DevOps/QA/文档）
 - [[maxmes]] — MaxMES 制造执行系统，6大核心模块
+- [[rabbitmq]] — RabbitMQ 消息队列，多协议支持（AMQP/MQTT/STOMP/Stream），v4.2.5
 
 ## Concepts
 

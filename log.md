@@ -1,5 +1,12 @@
 # Wiki 更新日志
 
+## 2026-04-24
+
+### 新增 RabbitMQ 实体页（来源：GitHub README + Releases）
+
+- `raw/rabbitmq-readme.md` — 原文存档（只读）
+- `entities/rabbitmq.md` — RabbitMQ 实体页（新建）：基本信息/协议支持/队列类型/安装方式/常用端口/文档索引
+
 ## 2026-04-23
 
 ### 新增 MaxMES 知识库（来源：MaxMES知识库202604.pdf）
