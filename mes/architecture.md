@@ -1,13 +1,29 @@
 ---
 title: MaxMES 系统架构设计
 created: 2026-04-23
-updated: 2026-04-23
+updated: 2026-04-25
 type: concept
 tags: [mes, architecture, tech-stack]
-sources: [raw/maxmes-knowledge-202604.pdf]
+sources: [raw/maxmes-knowledge-202604.pdf, raw/articles/maxmes-architecture-2026-04-25.md]
 ---
 
 # MaxMES 系统架构设计
+
+## 0. 架构图（4 层）
+
+> 生成于 2026-04-25，使用 `architecture-diagram` skill（dark-themed SVG HTML）
+> 源码：[raw/articles/maxmes-architecture-2026-04-25.md](../raw/articles/maxmes-architecture-2026-04-25.html)
+
+![MaxMES 4-Layer Architecture](../assets/maxmes-architecture-2026-04-25.png)
+
+### 分层说明
+
+| 层 | 名称 | 核心组件 |
+|----|------|---------|
+| Layer 1 | 客户端层 | Web Browser / MES Terminal / PDA / Tablet / API Client |
+| Layer 2 | 网络/网关层 | Nginx 反向代理 / Firewall / DNS / Router (VIP: 192.168.100.6) |
+| Layer 3 | 应用层 | Vue.js 前端 / API Server / Auth (JWT+RBAC) / MES Core / 7大业务模块 |
+| Layer 4 | 数据层 | MySQL 主库 / Redis 缓存 / 文件存储 / 备份 / ERP-WMS 集成 |
 
 ## 2. 技术栈选择
 

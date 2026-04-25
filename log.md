@@ -1,5 +1,14 @@
 # Wiki 更新日志
 
+## 2026-04-25
+
+### 更新 MaxMES 架构页（嵌入 4 层架构图）
+
+- `assets/maxmes-architecture-2026-04-25.png` — 架构图 PNG（173KB）
+- `raw/articles/maxmes-architecture-2026-04-25.html` — 架构图 HTML 源码存档
+- `mes/architecture.md` — 新增 Section 0，嵌入架构图 + 分层说明表格，updated: 2026-04-25
+- 架构图使用内置 `architecture-diagram` skill 生成（dark-themed SVG HTML，JetBrains Mono 字体）
+
 ## 2026-04-24
 
 ### 新增 RabbitMQ 实体页（来源：GitHub README + Releases）

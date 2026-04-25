@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxMES Architecture Diagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      min-height: 100vh;
+      padding: 2rem;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 2rem;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pulse-dot {
+      width: 12px;
+      height: 12px;
+      background: #22d3ee;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      margin-left: 1.75rem;
+    }
+
+    .diagram-container {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 1rem;
+      border: 1px solid #1e293b;
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+
+    svg {
+      width: 100%;
+      min-width: 900px;
+      display: block;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 0.75rem;
+      border: 1px solid #1e293b;
+      padding: 1.25rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .card-dot.cyan { background: #22d3ee; }
+    .card-dot.emerald { background: #34d399; }
+    .card-dot.violet { background: #a78bfa; }
+    .card-dot.amber { background: #fbbf24; }
+    .card-dot.rose { background: #fb7185; }
+    .card-dot.orange { background: #fb923c; }
+
+    .card h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .card ul {
+      list-style: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+    }
+
+    .card li {
+      margin-bottom: 0.375rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #475569;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-row">
+        <div class="pulse-dot"></div>
+        <h1>MaxMES Architecture</h1>
+      </div>
+      <p class="subtitle">Manufacturing Execution System — 4-Layer Architecture</p>
+    </div>
+
+    <!-- Main Diagram -->
+    <div class="diagram-container">
+      <svg viewBox="0 0 1000 750">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+          </marker>
+          <marker id="arrowhead-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee" />
+          </marker>
+          <marker id="arrowhead-emerald" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#34d399" />
+          </marker>
+          <marker id="arrowhead-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#fb923c" />
+          </marker>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+
+        <!-- Background Grid -->
+        <rect width="100%" height="100%" fill="url(#grid)" />
+
+        <!-- ========== LAYER 1: CLIENT LAYER ========== -->
+        <!-- Layer Label -->
+        <rect x="20" y="20" width="960" height="170" rx="10" fill="rgba(8, 51, 68, 0.2)" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="35" y="40" fill="#22d3ee" font-size="10" font-weight="600">Layer 1 — Client</text>
+
+        <!-- Browsers -->
+        <rect x="60" y="60" width="110" height="60" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="115" y="83" fill="white" font-size="11" font-weight="600" text-anchor="middle">Web Browser</text>
+        <text x="115" y="99" fill="#94a3b8" font-size="9" text-anchor="middle">Chrome / Edge</text>
+        <text x="115" y="113" fill="#22d3ee" font-size="8" text-anchor="middle">192.168.x.x</text>
+
+        <!-- MES Terminals -->
+        <rect x="220" y="60" width="110" height="60" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="275" y="83" fill="white" font-size="11" font-weight="600" text-anchor="middle">MES Terminal</text>
+        <text x="275" y="99" fill="#94a3b8" font-size="9" text-anchor="middle">Windows PC</text>
+        <text x="275" y="113" fill="#22d3ee" font-size="8" text-anchor="middle">车间工位</text>
+
+        <!-- Mobile / PDA -->
+        <rect x="380" y="60" width="110" height="60" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="435" y="83" fill="white" font-size="11" font-weight="600" text-anchor="middle">Mobile / PDA</text>
+        <text x="435" y="99" fill="#94a3b8" font-size="9" text-anchor="middle">Android</text>
+        <text x="435" y="113" fill="#22d3ee" font-size="8" text-anchor="middle">扫码录入</text>
+
+        <!-- Tablet -->
+        <rect x="540" y="60" width="110" height="60" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="595" y="83" fill="white" font-size="11" font-weight="600" text-anchor="middle">Tablet</text>
+        <text x="595" y="99" fill="#94a3b8" font-size="9" text-anchor="middle">iOS / Android</text>
+        <text x="595" y="113" fill="#22d3ee" font-size="8" text-anchor="middle">车间巡检</text>
+
+        <!-- API Client -->
+        <rect x="700" y="60" width="110" height="60" rx="6" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="755" y="83" fill="white" font-size="11" font-weight="600" text-anchor="middle">API Client</text>
+        <text x="755" y="99" fill="#94a3b8" font-size="9" text-anchor="middle">curl / Postman</text>
+        <text x="755" y="113" fill="#22d3ee" font-size="8" text-anchor="middle">REST API</text>
+
+        <!-- Arrow: Client → Network/Proxy -->
+        <line x1="115" y1="120" x2="115" y2="140" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowhead-cyan)"/>
+        <line x1="275" y1="120" x2="275" y2="140" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowhead-cyan)"/>
+        <line x1="435" y1="120" x2="435" y2="140" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowhead-cyan)"/>
+        <line x1="595" y1="120" x2="595" y2="140" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowhead-cyan)"/>
+        <line x1="755" y1="120" x2="755" y2="140" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowhead-cyan)"/>
+
+        <!-- HTTP/REST label -->
+        <text x="500" y="175" fill="#64748b" font-size="9" text-anchor="middle">HTTP / REST / WebSocket</text>
+        <line x1="115" y1="165" x2="755" y2="165" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3"/>
+
+        <!-- ========== LAYER 2: NETWORK / GATEWAY ========== -->
+        <rect x="20" y="180" width="960" height="110" rx="10" fill="rgba(251, 191, 36, 0.05)" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="35" y="200" fill="#fbbf24" font-size="10" font-weight="600">Layer 2 — Network / Gateway</text>
+
+        <!-- Nginx -->
+        <rect x="120" y="215" width="130" height="55" rx="6" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="185" y="238" fill="white" font-size="11" font-weight="600" text-anchor="middle">Nginx</text>
+        <text x="185" y="254" fill="#94a3b8" font-size="9" text-anchor="middle">Reverse Proxy</text>
+        <text x="185" y="266" fill="#fbbf24" font-size="8" text-anchor="middle">:80 / :443</text>
+
+        <!-- Firewall -->
+        <rect x="310" y="215" width="130" height="55" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+        <text x="375" y="238" fill="white" font-size="11" font-weight="600" text-anchor="middle">Firewall</text>
+        <text x="375" y="254" fill="#94a3b8" font-size="9" text-anchor="middle">iptables / FW</text>
+        <text x="375" y="266" fill="#fb7185" font-size="8" text-anchor="middle">ACL Control</text>
+
+        <!-- DNS -->
+        <rect x="500" y="215" width="130" height="55" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+        <text x="565" y="238" fill="white" font-size="11" font-weight="600" text-anchor="middle">DNS</text>
+        <text x="565" y="254" fill="#94a3b8" font-size="9" text-anchor="middle">Internal DNS</text>
+        <text x="565" y="266" fill="#fb7185" font-size="8" text-anchor="middle">192.168.100.x</text>
+
+        <!-- Router -->
+        <rect x="690" y="215" width="130" height="55" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+        <text x="755" y="238" fill="white" font-size="11" font-weight="600" text-anchor="middle">Router / L4</text>
+        <text x="755" y="254" fill="#94a3b8" font-size="9" text-anchor="middle">Layer 4 Routing</text>
+        <text x="755" y="266" fill="#fb7185" font-size="8" text-anchor="middle">VIP 192.168.100.6</text>
+
+        <!-- Arrow: Gateway → App Layer -->
+        <line x1="185" y1="270" x2="185" y2="305" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="200" y="290" fill="#fbbf24" font-size="9">反向代理转发</text>
+
+        <!-- ========== LAYER 3: APPLICATION LAYER ========== -->
+        <rect x="20" y="305" width="960" height="220" rx="10" fill="rgba(6, 78, 59, 0.15)" stroke="#34d399" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="35" y="325" fill="#34d399" font-size="10" font-weight="600">Layer 3 — Application</text>
+
+        <!-- Web App (Frontend) -->
+        <rect x="60" y="345" width="140" height="70" rx="6" fill="rgba(8, 51, 68, 0.5)" stroke="#22d3ee" stroke-width="1.5"/>
+        <text x="130" y="370" fill="white" font-size="11" font-weight="600" text-anchor="middle">Web Frontend</text>
+        <text x="130" y="386" fill="#94a3b8" font-size="9" text-anchor="middle">Vue.js / React</text>
+        <text x="130" y="402" fill="#22d3ee" font-size="8" text-anchor="middle">mes.example.com</text>
+
+        <!-- API Server -->
+        <rect x="260" y="345" width="140" height="70" rx="6" fill="rgba(6, 78, 59, 0.5)" stroke="#34d399" stroke-width="1.5"/>
+        <text x="330" y="370" fill="white" font-size="11" font-weight="600" text-anchor="middle">API Server</text>
+        <text x="330" y="386" fill="#94a3b8" font-size="9" text-anchor="middle">Node.js / Python</text>
+        <text x="330" y="402" fill="#34d399" font-size="8" text-anchor="middle">:3000 (dev) / :80 (prod)</text>
+
+        <!-- Auth Service -->
+        <rect x="460" y="345" width="140" height="70" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+        <text x="530" y="370" fill="white" font-size="11" font-weight="600" text-anchor="middle">Auth Service</text>
+        <text x="530" y="386" fill="#94a3b8" font-size="9" text-anchor="middle">JWT / Session</text>
+        <text x="530" y="402" fill="#fb7185" font-size="8" text-anchor="middle">RBAC 权限控制</text>
+
+        <!-- MES Core Services -->
+        <rect x="660" y="345" width="140" height="70" rx="6" fill="rgba(6, 78, 59, 0.5)" stroke="#34d399" stroke-width="1.5"/>
+        <text x="730" y="370" fill="white" font-size="11" font-weight="600" text-anchor="middle">MES Core</text>
+        <text x="730" y="386" fill="#94a3b8" font-size="9" text-anchor="middle">生产管理核心</text>
+        <text x="730" y="402" fill="#34d399" font-size="8" text-anchor="middle">工单/报工/工序</text>
+
+        <!-- Business Services Row -->
+        <rect x="60" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="110" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">工单管理</text>
+        <text x="110" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">Work Order</text>
+
+        <rect x="175" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="225" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">报工管理</text>
+        <text x="225" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">Reporting</text>
+
+        <rect x="290" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="340" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">工艺管理</text>
+        <text x="340" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">BOM/Route</text>
+
+        <rect x="405" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="455" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">设备管理</text>
+        <text x="455" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">Equipment</text>
+
+        <rect x="520" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="570" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">质量管理</text>
+        <text x="570" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">QC / QA</text>
+
+        <rect x="635" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="685" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">物料管理</text>
+        <text x="685" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">Inventory</text>
+
+        <rect x="750" y="435" width="100" height="60" rx="6" fill="rgba(6, 78, 59, 0.3)" stroke="#34d399" stroke-width="1"/>
+        <text x="800" y="457" fill="white" font-size="10" font-weight="600" text-anchor="middle">报表中心</text>
+        <text x="800" y="471" fill="#94a3b8" font-size="8" text-anchor="middle">Reports</text>
+
+        <!-- Arrows: Services → DB -->
+        <line x1="730" y1="415" x2="730" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        <line x1="685" y1="415" x2="685" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        <line x1="570" y1="415" x2="570" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        <line x1="455" y1="415" x2="455" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        <line x1="340" y1="415" x2="340" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        <line x1="225" y1="415" x2="225" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        <line x1="110" y1="415" x2="110" y2="425" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+
+        <!-- Arrow: App → Data Layer -->
+        <line x1="330" y1="415" x2="330" y2="425" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="350" y="422" fill="#64748b" font-size="9">SQL</text>
+
+        <!-- ========== LAYER 4: DATA LAYER ========== -->
+        <rect x="20" y="525" width="960" height="160" rx="10" fill="rgba(76, 29, 149, 0.15)" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="35" y="545" fill="#a78bfa" font-size="10" font-weight="600">Layer 4 — Data</text>
+
+        <!-- Primary DB -->
+        <rect x="80" y="560" width="160" height="90" rx="8" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+        <text x="160" y="585" fill="white" font-size="12" font-weight="600" text-anchor="middle">Primary Database</text>
+        <text x="160" y="603" fill="#94a3b8" font-size="9" text-anchor="middle">MySQL / PostgreSQL</text>
+        <text x="160" y="619" fill="#a78bfa" font-size="8" text-anchor="middle">192.168.100.6:3306</text>
+        <text x="160" y="635" fill="#fbbf24" font-size="7" text-anchor="middle">● 主库</text>
+
+        <!-- Redis Cache -->
+        <rect x="290" y="560" width="140" height="90" rx="8" fill="rgba(251, 146, 60, 0.3)" stroke="#fb923c" stroke-width="1.5"/>
+        <text x="360" y="585" fill="white" font-size="12" font-weight="600" text-anchor="middle">Redis Cache</text>
+        <text x="360" y="603" fill="#94a3b8" font-size="9" text-anchor="middle">Session / Cache</text>
+        <text x="360" y="619" fill="#fb923c" font-size="8" text-anchor="middle">192.168.100.6:6379</text>
+        <text x="360" y="635" fill="#fbbf24" font-size="7" text-anchor="middle">● 缓存</text>
+
+        <!-- File Storage -->
+        <rect x="480" y="560" width="140" height="90" rx="8" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="550" y="585" fill="white" font-size="12" font-weight="600" text-anchor="middle">File Storage</text>
+        <text x="550" y="603" fill="#94a3b8" font-size="9" text-anchor="middle">Upload / Attachments</text>
+        <text x="550" y="619" fill="#a78bfa" font-size="8" text-anchor="middle">/data/uploads</text>
+        <text x="550" y="635" fill="#fbbf24" font-size="7" text-anchor="middle">● 文件存储</text>
+
+        <!-- Backup -->
+        <rect x="670" y="560" width="140" height="90" rx="8" fill="rgba(76, 29, 149, 0.2)" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="740" y="585" fill="white" font-size="12" font-weight="600" text-anchor="middle">Backup</text>
+        <text x="740" y="603" fill="#94a3b8" font-size="9" text-anchor="middle">定时备份 / 归档</text>
+        <text x="740" y="619" fill="#94a3b8" font-size="8" text-anchor="middle">mysqldump</text>
+        <text x="740" y="635" fill="#fbbf24" font-size="7" text-anchor="middle">● 灾备</text>
+
+        <!-- External Integration -->
+        <rect x="860" y="560" width="100" height="90" rx="8" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="910" y="585" fill="white" font-size="10" font-weight="600" text-anchor="middle">External</text>
+        <text x="910" y="601" fill="#94a3b8" font-size="8" text-anchor="middle">ERP / WMS</text>
+        <text x="910" y="615" fill="#94a3b8" font-size="8" text-anchor="middle">API</text>
+        <text x="910" y="635" fill="#fbbf24" font-size="7" text-anchor="middle">● 集成</text>
+
+        <!-- ========== LEGEND ========== -->
+        <text x="35" y="715" fill="white" font-size="10" font-weight="600">Legend</text>
+
+        <rect x="35" y="725" width="14" height="10" rx="2" fill="rgba(8, 51, 68, 0.4)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="55" y="734" fill="#94a3b8" font-size="8">Frontend / Client</text>
+
+        <rect x="165" y="725" width="14" height="10" rx="2" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1"/>
+        <text x="185" y="734" fill="#94a3b8" font-size="8">Backend Service</text>
+
+        <rect x="305" y="725" width="14" height="10" rx="2" fill="rgba(76, 29, 149, 0.4)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="325" y="734" fill="#94a3b8" font-size="8">Database</text>
+
+        <rect x="430" y="725" width="14" height="10" rx="2" fill="rgba(251, 146, 60, 0.3)" stroke="#fb923c" stroke-width="1"/>
+        <text x="450" y="734" fill="#94a3b8" font-size="8">Cache / Message</text>
+
+        <rect x="575" y="725" width="14" height="10" rx="2" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1"/>
+        <text x="595" y="734" fill="#94a3b8" font-size="8">Security / Gateway</text>
+
+        <rect x="710" y="725" width="14" height="10" rx="2" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1"/>
+        <text x="730" y="734" fill="#94a3b8" font-size="8">Network / Cloud</text>
+
+        <line x1="35" y1="745" x2="49" y2="745" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="55" y="748" fill="#94a3b8" font-size="8">HTTP / Request</text>
+
+        <line x1="165" y1="745" x2="179" y2="745" stroke="#a78bfa" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="185" y="748" fill="#94a3b8" font-size="8">SQL Query</text>
+
+        <!-- Footer info -->
+        <text x="880" y="748" fill="#475569" font-size="8" text-anchor="end">github.com/xiaomaimax/mes-system</text>
+
+      </svg>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot cyan"></div>
+          <h3>客户端层</h3>
+        </div>
+        <ul>
+          <li>• Web Browser（Chrome / Edge）</li>
+          <li>• Windows MES Terminal</li>
+          <li>• Android PDA（扫码）</li>
+          <li>• Tablet（车间巡检）</li>
+          <li>• REST API 客户端</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot amber"></div>
+          <h3>网络层</h3>
+        </div>
+        <ul>
+          <li>• Nginx 反向代理（:80/:443）</li>
+          <li>• Firewall (iptables)</li>
+          <li>• Internal DNS</li>
+          <li>• Router / L4 Load Balancer</li>
+          <li>• VIP: 192.168.100.6</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot emerald"></div>
+          <h3>应用层</h3>
+        </div>
+        <ul>
+          <li>• Vue.js / React 前端</li>
+          <li>• API Server（Dev: :3000 / Prod: :80）</li>
+          <li>• JWT Auth + RBAC</li>
+          <li>• 7大核心业务模块</li>
+          <li>• 微服务化架构</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot violet"></div>
+          <h3>数据层</h3>
+        </div>
+        <ul>
+          <li>• MySQL / PostgreSQL 主库</li>
+          <li>• Redis 缓存（Session）</li>
+          <li>• 文件存储（/data/uploads）</li>
+          <li>• 定时备份 + 灾备</li>
+          <li>• ERP / WMS API 集成</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer">
+      MaxMES System — github.com/xiaomaimax/mes-system — © 2026
+    </p>
+  </div>
+</body>
+</html>
