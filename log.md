@@ -1,5 +1,13 @@
 # Wiki 更新日志
 
+## 2026-04-26
+
+### 新增 MaxMES CI/CD 自动化部署系统
+
+- `raw/articles/maxmes-cicd-2026-04-26.md` — Notion 文档原文存档
+- `concepts/maxmes-cicd.md` — 新建概念页，涵盖架构/组件/开发流程/hotfix/故障排查
+- `index.md` — 已在 MaxMES 系统部分新增 [[maxmes-cicd]] 条目
+
 ## 2026-04-25
 
 ### 更新 MaxMES 架构页（嵌入 4 层架构图）

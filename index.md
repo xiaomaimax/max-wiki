@@ -40,6 +40,7 @@
 - [[mes/operations]] — 运维手册：运维团队职责/监控体系/故障管理/备份恢复
 - [[mes/troubleshooting]] — 巡检报告：52项问题详情（P1×8/P2×20/P3×8）+ 已修复汇总
 - [[mes/project-acceptance]] — 项目验收报告：验收依据/范围/标准
+- [[maxmes-cicd]] — CI/CD 自动化部署系统：GitHub Actions + 服务器轮询 + systemd timer + 自动回滚
 - [[maxmes-production]] — 生产管理模块：车间计划、工单、报工、生产日报
 - [[maxmes-equipment]] — 设备管理模块：设备档案、点检、维护、维修
 - [[maxmes-quality]] — 质量管理模块：IQC/PQC/FQC、质量分析、批次追溯
